@@ -101,7 +101,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                                   widget.grade.valeur != null ? widget.grade.valeur : "-",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: ThemeUtils.textColor(),
+                                      color: ThemeUtils().theme["text"]["default"],
                                       fontFamily: "Asap",
                                       fontWeight: FontWeight.w600,
                                       fontSize: (screenSize.size.width / 5) * 0.3),
@@ -112,13 +112,13 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                                 child: Divider(
                                     height: (screenSize.size.height / 3) / 75,
                                     thickness: (screenSize.size.height / 3) / 75,
-                                    color: ThemeUtils.textColor()),
+                                    color: ThemeUtils().theme["text"]["default"]),
                               ),
                               FittedBox(
                                 child: Text(
                                   widget.grade.noteSur != null ? widget.grade.noteSur : "-",
                                   style: TextStyle(
-                                      color: ThemeUtils.textColor(),
+                                      color: ThemeUtils().theme["text"]["default"],
                                       fontFamily: "Asap",
                                       fontWeight: FontWeight.w600,
                                       fontSize: (screenSize.size.width / 5) * 0.3),
@@ -166,7 +166,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                                     widget.grade.devoir != null ? widget.grade.devoir : "-",
                                     minFontSize: 18,
                                     style: TextStyle(
-                                        fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                                        fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
@@ -274,7 +274,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                                           child: FittedBox(
                                             child: new Icon(
                                               Icons.bar_chart,
-                                              color: ThemeUtils.textColor(),
+                                              color: ThemeUtils().theme["text"]["default"],
                                             ),
                                           ),
                                         ),
@@ -297,7 +297,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                                         "SpaceStats",
                                         style: TextStyle(
                                             fontFamily: "Asap",
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                             textBaseline: TextBaseline.ideographic,
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -333,7 +333,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                               margin: EdgeInsets.symmetric(horizontal: screenSize.size.width / 5 * 0.7),
                               message:
                                   "Indique le nombre de points d'impact sur la moyenne de la matière au moment de l'obtention de cette note.",
-                              textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                              textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                               child: ImpactStat(
                                 impact: widget.stats.calculateAverageImpact(),
                                 label: "points de moyenne pour la matière (à l'obtention).",
@@ -346,7 +346,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                               margin: EdgeInsets.symmetric(horizontal: screenSize.size.width / 5 * 0.7),
                               message:
                                   "Indique le nombre de points d'impact sur la moyenne générale au moment de l'obtention de cette note.",
-                              textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                              textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                               child: ImpactStat(
                                 impact: widget.stats.calculateGlobalAverageImpact(),
                                 label: "points de moyenne générale (à l'obtention).",
@@ -359,7 +359,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                               margin: EdgeInsets.symmetric(horizontal: screenSize.size.width / 5 * 0.7),
                               message:
                                   "Indique le nombre de points d'impact sur la moyenne générale avec ou sans la note.",
-                              textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                              textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                               child: ImpactStat(
                                 impact: widget.stats.calculateGlobalAverageImpactOverall(),
                                 label: "points de moyenne générale (tout le temps).",
@@ -368,7 +368,7 @@ class _GradesModalBottomSheetContainerState extends State<GradesModalBottomSheet
                             SizedBox(height: screenSize.size.height / 10 * 0.1),
                             Text(
                               "A venir...",
-                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor().withOpacity(0.5)),
+                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"].withOpacity(0.5)),
                             )
                           ],
                         ),

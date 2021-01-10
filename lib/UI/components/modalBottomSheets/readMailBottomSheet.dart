@@ -73,7 +73,7 @@ class _ReadMailBottomSheetState extends State<ReadMailBottomSheet> {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            icon: Icon(MdiIcons.arrowLeft, color: ThemeUtils.textColor()),
+                            icon: Icon(MdiIcons.arrowLeft, color: ThemeUtils().theme["text"]["default"]),
                           ),
                         ),
                         Align(
@@ -88,7 +88,7 @@ class _ReadMailBottomSheetState extends State<ReadMailBottomSheet> {
                                   });
                                 },
                                 icon: Icon((monochromatic ? MdiIcons.eye : MdiIcons.eyeOutline),
-                                    color: ThemeUtils.textColor()),
+                                    color: ThemeUtils().theme["text"]["default"]),
                               ),
                             ],
                           ),
@@ -110,7 +110,7 @@ class _ReadMailBottomSheetState extends State<ReadMailBottomSheet> {
                               this.widget.mail.subject != "" ? this.widget.mail.subject : "(Sans sujet)",
                               maxLines: 100,
                               style: TextStyle(
-                                  fontFamily: "Asap", color: ThemeUtils.textColor(), fontWeight: FontWeight.bold),
+                                  fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontWeight: FontWeight.bold),
                               minFontSize: 18,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -128,7 +128,7 @@ class _ReadMailBottomSheetState extends State<ReadMailBottomSheet> {
                                         this.widget.mail.from["name"][0],
                                         style: TextStyle(
                                             fontFamily: "Asap",
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                             fontWeight: FontWeight.bold),
                                       ),
                                       maxRadius: screenSize.size.width / 5 * 0.8,
@@ -145,7 +145,7 @@ class _ReadMailBottomSheetState extends State<ReadMailBottomSheet> {
                                         children: [
                                           Text(
                                             this.widget.mail.from["name"],
-                                            style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                            style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                             overflow: TextOverflow.ellipsis,
                                           ),
                                           Text(
@@ -174,7 +174,7 @@ class _ReadMailBottomSheetState extends State<ReadMailBottomSheet> {
                                   margin: EdgeInsets.only(left: screenSize.size.width / 5 * 0.1),
                                   width: screenSize.size.width / 5 * 0.5,
                                   child: IconButton(
-                                    icon: Icon(MdiIcons.undoVariant, color: ThemeUtils.textColor()),
+                                    icon: Icon(MdiIcons.undoVariant, color: ThemeUtils().theme["text"]["default"]),
                                     onPressed: () async {
                                       await CustomDialogs.writeModalBottomSheet(context,
                                           defaultSubject: this.widget.mail.subject,
@@ -202,7 +202,7 @@ class _ReadMailBottomSheetState extends State<ReadMailBottomSheet> {
                                               throw "Unable to launch url";
                                             }
                                           },
-                                          textStyle: TextStyle(color: ThemeUtils.textColor()),
+                                          textStyle: TextStyle(color: ThemeUtils().theme["text"]["default"]),
                                         ),
                                       ),
                                       AnimatedContainer(

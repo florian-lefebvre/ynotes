@@ -125,12 +125,12 @@ class _QuickMenuState extends State<QuickMenu> with TickerProviderStateMixin {
                                                     alignment: Alignment.centerLeft,
                                                     child: Text(
                                                       quickMenuTexts[index],
-                                                      style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.2, color: ThemeUtils.textColor()),
+                                                      style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.2, color: ThemeUtils().theme["text"]["default"]),
                                                     ),
                                                   ),
                                                   Align(
                                                     alignment: Alignment.centerRight,
-                                                    child: Icon(quickMenuIcons[index], color: ThemeUtils.textColor()),
+                                                    child: Icon(quickMenuIcons[index], color: ThemeUtils().theme["text"]["default"]),
                                                   )
                                                 ],
                                               ),
@@ -202,7 +202,7 @@ class _QuickMenuState extends State<QuickMenu> with TickerProviderStateMixin {
                                                                           alignment: Alignment.centerLeft,
                                                                           child: Text(
                                                                             snapshot.data[index].fileName,
-                                                                            style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.2, color: ThemeUtils.textColor()),
+                                                                            style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.2, color: ThemeUtils().theme["text"]["default"]),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -236,12 +236,12 @@ class _QuickMenuState extends State<QuickMenu> with TickerProviderStateMixin {
                                             children: <Widget>[
                                               Icon(
                                                 MdiIcons.downloadOffOutline,
-                                                color: ThemeUtils.textColor(),
+                                                color: ThemeUtils().theme["text"]["default"],
                                                 size: screenSize.size.width / 5 * 1.5,
                                               ),
                                               Text(
                                                 "Aucun téléchargement.",
-                                                style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: 15),
+                                                style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: 15),
                                               )
                                             ],
                                           ),

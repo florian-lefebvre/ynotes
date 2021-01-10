@@ -52,7 +52,7 @@ class _FolderChoiceDialogState extends State<FolderChoiceDialog> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       title: Text(
         "Création de dossier",
-        style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+        style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
       ),
       content: Container(
         height: widget.selectionMode ? screenSize.size.height / 10 * 2.5 : screenSize.size.height / 10 * 1.2,
@@ -62,7 +62,7 @@ class _FolderChoiceDialogState extends State<FolderChoiceDialog> {
             Container(
               child: Text(
                 "Donnez un nom à ce dossier",
-                style: TextStyle(fontFamily: 'Asap', color: ThemeUtils.textColor()),
+                style: TextStyle(fontFamily: 'Asap', color: ThemeUtils().theme["text"]["default"]),
                 textAlign: TextAlign.left,
               ),
             ),
@@ -81,15 +81,15 @@ class _FolderChoiceDialogState extends State<FolderChoiceDialog> {
                 },
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: ThemeUtils.textColor()),
+                    borderSide: BorderSide(color: ThemeUtils().theme["text"]["default"]),
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: ThemeUtils.textColor()),
+                    borderSide: BorderSide(color: ThemeUtils().theme["text"]["default"]),
                   ),
                 ),
                 style: TextStyle(
                   fontFamily: 'Asap',
-                  color: ThemeUtils.textColor(),
+                  color: ThemeUtils().theme["text"]["default"],
                 ),
               ),
             ),
@@ -97,7 +97,7 @@ class _FolderChoiceDialogState extends State<FolderChoiceDialog> {
               Container(
                 child: Text(
                   "Utiliser un dossier existant",
-                  style: TextStyle(fontFamily: 'Asap', color: ThemeUtils.textColor()),
+                  style: TextStyle(fontFamily: 'Asap', color: ThemeUtils().theme["text"]["default"]),
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -107,12 +107,12 @@ class _FolderChoiceDialogState extends State<FolderChoiceDialog> {
                 child: DropdownButton<String>(
                   value: dropDownValue,
                   dropdownColor: Theme.of(context).primaryColor,
-                  style: TextStyle(color: ThemeUtils.textColor()),
+                  style: TextStyle(color: ThemeUtils().theme["text"]["default"]),
                   icon: null,
                   iconSize: 0,
                   underline: Container(
                     height: screenSize.size.height / 10 * 0.02,
-                    color: ThemeUtils.textColor(),
+                    color: ThemeUtils().theme["text"]["default"],
                   ),
                   onChanged: (String newValue) {
                     setState(() {
@@ -128,7 +128,7 @@ class _FolderChoiceDialogState extends State<FolderChoiceDialog> {
                       value: value ?? "",
                       child: Text(
                         value ?? "",
-                        style: TextStyle(fontFamily: 'Asap', color: ThemeUtils.textColor()),
+                        style: TextStyle(fontFamily: 'Asap', color: ThemeUtils().theme["text"]["default"]),
                       ),
                     );
                   }).toList(),

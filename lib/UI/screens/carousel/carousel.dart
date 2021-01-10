@@ -494,7 +494,7 @@ class _page4State extends State<page4> {
     }
     return Container(
       height: screenSize.size.height,
-      color: Theme.of(context).backgroundColor,
+      color: ThemeUtils().theme["background"]["default"],
       child: CupertinoScrollbar(
         child: SingleChildScrollView(
           child: Container(
@@ -504,7 +504,7 @@ class _page4State extends State<page4> {
               children: <Widget>[
                 Text(
                   "Paramètrons votre application",
-                  style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.35, color: ThemeUtils.textColor()),
+                  style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.35, color: ThemeUtils().theme["text"]["default"]),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
@@ -516,9 +516,9 @@ class _page4State extends State<page4> {
                 ListTile(
                     title: Text(
                       "Choix de spécialités",
-                      style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.3),
+                      style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.3),
                     ),
-                    leading: Icon(MdiIcons.formatListBulleted, color: ThemeUtils.textColor()),
+                    leading: Icon(MdiIcons.formatListBulleted, color: ThemeUtils().theme["text"]["default"]),
                     onTap: () {
                       CustomDialogs.showSpecialtiesChoice(context);
                     }),
@@ -530,12 +530,12 @@ class _page4State extends State<page4> {
                   style: TextStyle(
                     fontFamily: "Asap",
                     fontSize: screenSize.size.height / 10 * 0.27,
-                    color: ThemeUtils.textColor(),
+                    color: ThemeUtils().theme["text"]["default"],
                   ),
                   textAlign: TextAlign.center,
                 ),
                 Divider(
-                  color: ThemeUtils.textColor(),
+                  color: ThemeUtils().theme["text"]["default"],
                 ),
                 FutureBuilder(
                     future: getSetting("nightmode"),
@@ -543,7 +543,7 @@ class _page4State extends State<page4> {
                     builder: (context, snapshot) {
                       return SwitchListTile(
                         value: snapshot.data,
-                        title: Text("Mode nuit", style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.3)),
+                        title: Text("Mode nuit", style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.3)),
                         onChanged: (value) {
                           setState(() {
                             Provider.of<AppStateNotifier>(context, listen: false).updateTheme(value);
@@ -552,16 +552,16 @@ class _page4State extends State<page4> {
                         },
                         secondary: Icon(
                           Icons.lightbulb_outline,
-                          color: ThemeUtils.textColor(),
+                          color: ThemeUtils().theme["text"]["default"],
                         ),
                       );
                     }),
                 Divider(
-                  color: ThemeUtils.textColor(),
+                  color: ThemeUtils().theme["text"]["default"],
                 ),
                 Text(
                   "Notifications",
-                  style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.27, color: ThemeUtils.textColor()),
+                  style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.27, color: ThemeUtils().theme["text"]["default"]),
                   textAlign: TextAlign.center,
                 ),
                 Divider(),
@@ -573,11 +573,11 @@ class _page4State extends State<page4> {
                           value: snapshot.data,
                           title: Text(
                             "Notification de nouvelle note",
-                            style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.3),
+                            style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.3),
                           ),
                           secondary: Icon(
                             MdiIcons.newBox,
-                            color: ThemeUtils.textColor(),
+                            color: ThemeUtils().theme["text"]["default"],
                           ),
                           onChanged: (value) async {
                             if ((await Permission.ignoreBatteryOptimizations.isGranted)) {
@@ -604,7 +604,7 @@ class _page4State extends State<page4> {
                         value: snapshot.data,
                         title: Text(
                           "Notification de nouveau mail",
-                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.3),
+                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.3),
                         ),
                         onChanged: (value) async {
                           if ((await Permission.ignoreBatteryOptimizations.isGranted)) {
@@ -623,12 +623,12 @@ class _page4State extends State<page4> {
                         },
                         secondary: Icon(
                           MdiIcons.newBox,
-                          color: ThemeUtils.textColor(),
+                          color: ThemeUtils().theme["text"]["default"],
                         ),
                       );
                     }),
                 Divider(
-                  color: ThemeUtils.textColor(),
+                  color: ThemeUtils().theme["text"]["default"],
                 ),
                 RaisedButton(
                   color: Color(0xff5DADE2),
@@ -754,7 +754,7 @@ class _SlidingCarouselState extends State<SlidingCarousel> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: _pageOffset.toInt() == 3 ? Theme.of(context).backgroundColor : _getBGColor(),
+      backgroundColor: _pageOffset.toInt() == 3 ? ThemeUtils().theme["background"]["default"] : _getBGColor(),
       body: //Disable back button
           WillPopScope(
         onWillPop: () async {

@@ -148,8 +148,8 @@ class _MailPageState extends State<MailPage> {
                                     child: DropdownButton<String>(
                                       value: dossier,
                                       iconSize: (screenSize.size.width / 5) * 0.3,
-                                      iconEnabledColor: ThemeUtils.textColor(),
-                                      style: TextStyle(fontSize: 18, fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                      iconEnabledColor: ThemeUtils().theme["text"]["default"],
+                                      style: TextStyle(fontSize: 18, fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                       onChanged: (String newValue) {
                                         setState(() {
                                           dossier = newValue;
@@ -166,7 +166,7 @@ class _MailPageState extends State<MailPage> {
                                             value,
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
-                                                fontSize: 18, fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                                fontSize: 18, fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                           ),
                                         );
                                       }).toList(),
@@ -176,7 +176,7 @@ class _MailPageState extends State<MailPage> {
                                 VerticalDivider(
                                   width: screenSize.size.width / 5 * 0.003,
                                   thickness: screenSize.size.width / 5 * 0.003,
-                                  color: ThemeUtils.textColor(),
+                                  color: ThemeUtils().theme["text"]["default"],
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(left: screenSize.size.width / 5 * 0.1),
@@ -201,7 +201,7 @@ class _MailPageState extends State<MailPage> {
                                             sortValue.reversed_date: MdiIcons.sortDescending,
                                             sortValue.author: MdiIcons.account,
                                           }),
-                                          color: ThemeUtils.textColor(),
+                                          color: ThemeUtils().theme["text"]["default"],
                                         ),
                                       ),
                                     ),
@@ -228,10 +228,10 @@ class _MailPageState extends State<MailPage> {
                                       children: [
                                         Icon(
                                           MdiIcons.networkStrengthOff,
-                                          color: ThemeUtils.textColor(),
+                                          color: ThemeUtils().theme["text"]["default"],
                                         ),
                                         Text("Les mails ne sont pas encore lisibles hors ligne...",
-                                            style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asapê"))
+                                            style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asapê"))
                                       ],
                                     ),
                                   );
@@ -267,7 +267,7 @@ class _MailPageState extends State<MailPage> {
                                                                 EdgeInsets.only(left: screenSize.size.width / 5 * 0.2),
                                                             child: Icon(
                                                               MdiIcons.account,
-                                                              color: ThemeUtils.textColor(),
+                                                              color: ThemeUtils().theme["text"]["default"],
                                                             ),
                                                           ),
                                                           Container(
@@ -285,7 +285,7 @@ class _MailPageState extends State<MailPage> {
                                                                     style: TextStyle(
                                                                       fontFamily: "Asap",
                                                                       fontSize: screenSize.size.height / 10 * 0.25,
-                                                                      color: ThemeUtils.textColor(),
+                                                                      color: ThemeUtils().theme["text"]["default"],
                                                                     ),
                                                                     overflow: TextOverflow.ellipsis,
                                                                   ),
@@ -353,7 +353,7 @@ class _MailPageState extends State<MailPage> {
                                       children: <Widget>[
                                         Text(
                                           "Une erreur a eu lieu",
-                                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                         ),
                                         FlatButton(
                                           onPressed: () {
@@ -364,7 +364,7 @@ class _MailPageState extends State<MailPage> {
                                               ? Text("Recharger",
                                                   style: TextStyle(
                                                     fontFamily: "Asap",
-                                                    color: ThemeUtils.textColor(),
+                                                    color: ThemeUtils().theme["text"]["default"],
                                                   ))
                                               : FittedBox(
                                                   child: SpinKitThreeBounce(

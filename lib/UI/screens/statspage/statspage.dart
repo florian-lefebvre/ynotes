@@ -46,7 +46,7 @@ class _StatsPageState extends State<StatsPage> {
                         style: TextStyle(fontFamily: "Asap", color: Colors.white, fontSize: 18),
                       ),
                       Divider(
-                        color: ThemeUtils.textColor(),
+                        color: ThemeUtils().theme["text"]["default"],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -137,7 +137,7 @@ class _StatsPageState extends State<StatsPage> {
                   children: [
                     Text(
                       "Notes",
-                      style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: 18),
+                      style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: 18),
                     ),
                   ],
                 ),
@@ -176,7 +176,7 @@ class _StatsPageState extends State<StatsPage> {
                 child: Column(
                   children: [
                     Divider(
-                      color: ThemeUtils.textColor(),
+                      color: ThemeUtils().theme["text"]["default"],
                     ),
                     Wrap(
                       direction: Axis.horizontal,
@@ -189,7 +189,7 @@ class _StatsPageState extends State<StatsPage> {
                             "14.5",
                             style: TextStyle(
                                 fontFamily: "Asap",
-                                color: ThemeUtils.textColor(),
+                                color: ThemeUtils().theme["text"]["default"],
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18),
                           ),
@@ -200,7 +200,7 @@ class _StatsPageState extends State<StatsPage> {
                             "14",
                             style: TextStyle(
                                 fontFamily: "Asap",
-                                color: ThemeUtils.textColor(),
+                                color: ThemeUtils().theme["text"]["default"],
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18),
                           ),
@@ -211,7 +211,7 @@ class _StatsPageState extends State<StatsPage> {
                             "14.5",
                             style: TextStyle(
                                 fontFamily: "Asap",
-                                color: ThemeUtils.textColor(),
+                                color: ThemeUtils().theme["text"]["default"],
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18),
                           ),

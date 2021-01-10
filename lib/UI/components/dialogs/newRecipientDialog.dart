@@ -55,7 +55,7 @@ class _NewRecipientDialogState extends State<NewRecipientDialog> {
                         margin: EdgeInsets.only(top: screenSize.size.width / 5 * 0.2),
                         height: (screenSize.size.height / 10 * 8.8) / 10 * 0.75,
                         width: screenSize.size.width / 5 * 2,
-                        child: Icon(MdiIcons.check, color: ThemeUtils.textColor())),
+                        child: Icon(MdiIcons.check, color: ThemeUtils().theme["text"]["default"])),
                   ],
                 ),
               ),
@@ -64,7 +64,7 @@ class _NewRecipientDialogState extends State<NewRecipientDialog> {
               "Contact personnalisé",
               style: TextStyle(
                   fontFamily: "Asap",
-                  color: ThemeUtils.textColor().withOpacity(0.5),
+                  color: ThemeUtils().theme["text"]["default"].withOpacity(0.5),
                   fontSize: screenSize.size.width / 5 * 0.35),
               textAlign: TextAlign.center,
             ),
@@ -74,7 +74,7 @@ class _NewRecipientDialogState extends State<NewRecipientDialog> {
                   'Professeur',
                   style: TextStyle(
                       fontFamily: "Asap",
-                      color: ThemeUtils.textColor().withOpacity(0.8),
+                      color: ThemeUtils().theme["text"]["default"].withOpacity(0.8),
                       fontSize: screenSize.size.width / 5 * 0.25),
                 ),
                 value: isTeacher,
@@ -89,7 +89,7 @@ class _NewRecipientDialogState extends State<NewRecipientDialog> {
               child: TextField(
                 controller: nameController,
                 style: TextStyle(
-                    fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.width / 5 * 0.35),
+                    fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.width / 5 * 0.35),
                 decoration: new InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Prénom',
@@ -106,13 +106,13 @@ class _NewRecipientDialogState extends State<NewRecipientDialog> {
               child: TextField(
                 controller: surnameController,
                 style: TextStyle(
-                    fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.width / 5 * 0.35),
+                    fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.width / 5 * 0.35),
                 decoration: new InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Nom de famille',
                   labelStyle: TextStyle(
                       fontFamily: "Asap",
-                      color: ThemeUtils.textColor().withOpacity(0.5),
+                      color: ThemeUtils().theme["text"]["default"].withOpacity(0.5),
                       fontSize: screenSize.size.width / 5 * 0.35),
                 ),
               ),
@@ -123,13 +123,13 @@ class _NewRecipientDialogState extends State<NewRecipientDialog> {
               child: TextField(
                 controller: disciplineController,
                 style: TextStyle(
-                    fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.width / 5 * 0.35),
+                    fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.width / 5 * 0.35),
                 decoration: new InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Matière',
                   labelStyle: TextStyle(
                       fontFamily: "Asap",
-                      color: ThemeUtils.textColor().withOpacity(0.5),
+                      color: ThemeUtils().theme["text"]["default"].withOpacity(0.5),
                       fontSize: screenSize.size.width / 5 * 0.35),
                 ),
               ),
@@ -140,13 +140,13 @@ class _NewRecipientDialogState extends State<NewRecipientDialog> {
               child: TextField(
                 controller: idController,
                 style: TextStyle(
-                    fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.width / 5 * 0.35),
+                    fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.width / 5 * 0.35),
                 decoration: new InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Identifiant unique',
                   labelStyle: TextStyle(
                       fontFamily: "Asap",
-                      color: ThemeUtils.textColor().withOpacity(0.5),
+                      color: ThemeUtils().theme["text"]["default"].withOpacity(0.5),
                       fontSize: screenSize.size.width / 5 * 0.35),
                 ),
               ),

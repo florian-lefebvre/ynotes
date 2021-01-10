@@ -7,6 +7,7 @@ import 'package:ynotes/main.dart';
 import 'package:ynotes/apis/EcoleDirecte.dart';
 import 'package:ynotes/usefulMethods.dart';
 
+import 'package:ynotes/utils/themeUtils.dart';
 import 'package:ynotes/classes.dart';
 
 class LoadingPage extends StatefulWidget {

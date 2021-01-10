@@ -61,10 +61,14 @@ mainTestNewGrades() async {
     String url = await ReadStorage("pronoteurl");
     String cas = await ReadStorage("pronotecas");
     await backgroundFetchApi.login(u, p, url: url, cas: cas);
-    listOnlineGrades = getAllGrades(await backgroundFetchApi.getGrades(forceReload: true), overrideLimit: true);
+    listOnlineGrades = getAllGrades(
+        await backgroundFetchApi.getGrades(forceReload: true),
+        overrideLimit: true);
 
     print("Online length is ${listOnlineGrades.length}");
-    if (oldGradesLength != null && oldGradesLength != 0 && oldGradesLength < listOnlineGrades.length) {
+    if (oldGradesLength != null &&
+        oldGradesLength != 0 &&
+        oldGradesLength < listOnlineGrades.length) {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setInt("gradesNumber", listOnlineGrades.length);
       return true;
@@ -72,7 +76,8 @@ mainTestNewGrades() async {
       return false;
     }
   } catch (e) {
-    await logFile("An error occured during the new grades test : " + e.toString());
+    await logFile(
+        "An error occured during the new grades test : " + e.toString());
     return false;
   }
 }
@@ -105,7 +110,8 @@ mainTestNewMails() async {
       return null;
     }
   } catch (e) {
-    print("Erreur dans la verification de nouveaux mails hors ligne " + e.toString());
+    print("Erreur dans la verification de nouveaux mails hors ligne " +
+        e.toString());
     return null;
   }
 }
@@ -120,7 +126,8 @@ Future main() async {
     'newgradeicon',
   );
   var initializationSettingsIOS = new IOSInitializationSettings();
-  var initializationSettings = new InitializationSettings(initializationSettingsAndroid, initializationSettingsIOS);
+  var initializationSettings = new InitializationSettings(
+      initializationSettingsAndroid, initializationSettingsIOS);
   flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
   flutterLocalNotificationsPlugin.initialize(initializationSettings,
       onSelectNotification: BackgroundService.onSelectNotification);
@@ -128,9 +135,11 @@ Future main() async {
   //Init offline data
   await offline.init();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: isDarkModeEnabled ? Color(0xff414141) : Color(0xffF3F3F3),
+      systemNavigationBarColor:
+          isDarkModeEnabled ? Color(0xff414141) : Color(0xffF3F3F3),
       statusBarColor: Colors.transparent));
-  ConnectionStatusSingleton connectionStatus = ConnectionStatusSingleton.getInstance();
+  ConnectionStatusSingleton connectionStatus =
+      ConnectionStatusSingleton.getInstance();
   connectionStatus.initialize();
   runZoned<Future<Null>>(() async {
     runApp(
@@ -171,9 +180,9 @@ class HomeApp extends StatelessWidget {
           // ... other locales the app supports
         ],
         debugShowCheckedModeBanner: false,
-        theme: lightTheme,
+        // theme: ThemeUtils.themeColors lightTheme,
         navigatorKey: _navigatorKey,
-        darkTheme: darkTheme,
+        // darkTheme: darkTheme,
         home: loader(),
         themeMode: themeNotifier.getTheme(),
       ),
@@ -224,7 +233,7 @@ class homePage extends StatelessWidget {
       DeviceOrientation.portraitUp,
     ]);
     return Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: ThemeUtils().theme["background"]["default"],
         body: SafeArea(
           child: DrawerBuilder(),
         ));

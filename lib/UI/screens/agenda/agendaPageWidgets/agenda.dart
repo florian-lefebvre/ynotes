@@ -153,12 +153,12 @@ class _AgendaState extends State<Agenda> {
                             children: [
                               Text(
                                 DateFormat.Hm().format(lesson.start),
-                                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                               ),
-                              Icon(MdiIcons.arrowRight, color: ThemeUtils.textColor()),
+                              Icon(MdiIcons.arrowRight, color: ThemeUtils().theme["text"]["default"]),
                               Text(
                                 DateFormat.Hm().format(lesson.end),
-                                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                               )
                             ],
                           ),
@@ -252,7 +252,7 @@ class _AgendaState extends State<Agenda> {
                                               Text(
                                                 "Journée détente ?",
                                                 textAlign: TextAlign.center,
-                                                style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.2),
+                                                style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.2),
                                               ),
                                               FlatButton(
                                                 onPressed: () async {
@@ -260,7 +260,7 @@ class _AgendaState extends State<Agenda> {
                                                   await refreshAgendaFutures(force: true);
                                                 },
                                                 child: snapshot.connectionState != ConnectionState.waiting
-                                                    ? Text("Recharger", style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.2))
+                                                    ? Text("Recharger", style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.2))
                                                     : FittedBox(child: SpinKitThreeBounce(color: Theme.of(context).primaryColorDark, size: screenSize.size.width / 5 * 0.4)),
                                                 shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0), side: BorderSide(color: Theme.of(context).primaryColorDark)),
                                               )

@@ -178,13 +178,13 @@ class HomeworkPageState extends State<HomeworkPage> {
                                       children: <Widget>[
                                         Icon(
                                           Icons.swap_horiz_outlined,
-                                          color: ThemeUtils.textColor(),
+                                          color: ThemeUtils().theme["text"]["default"],
                                         ),
                                         Text(
                                           "Devoirs à faire",
                                           style: TextStyle(
                                             fontFamily: "Asap",
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           ),
                                         ),
                                       ],
@@ -242,13 +242,13 @@ class HomeworkPageState extends State<HomeworkPage> {
                                     children: <Widget>[
                                       Icon(
                                         MdiIcons.calendar,
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                       ),
                                       Text(
                                         "Choisir une date",
                                         style: TextStyle(
                                           fontFamily: "Asap",
-                                          color: ThemeUtils.textColor(),
+                                          color: ThemeUtils().theme["text"]["default"],
                                         ),
                                       ),
                                     ],

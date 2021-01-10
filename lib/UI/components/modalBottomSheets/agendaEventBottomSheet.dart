@@ -51,7 +51,7 @@ class AgendaEventChoice extends StatelessWidget {
                       fontFamily: "Asap",
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
-                      color: ThemeUtils.textColor(),
+                      color: ThemeUtils().theme["text"]["default"],
                     ),
                     textAlign: TextAlign.center,
                     alignment: AlignmentDirectional.topStart,

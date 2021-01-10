@@ -83,7 +83,7 @@ class _DialogSpecialtiesState extends State<DialogSpecialties> {
                                       child: Row(
                                         children: <Widget>[
                                           CircularCheckBox(
-                                            inactiveColor: ThemeUtils.textColor(),
+                                            inactiveColor: ThemeUtils().theme["text"]["default"],
                                             onChanged: (value) {
                                               if (chosenSpecialties.contains(disciplines[index])) {
                                                 setState(() {
@@ -106,7 +106,7 @@ class _DialogSpecialtiesState extends State<DialogSpecialties> {
                                             width: screenSize.size.width / 5 * 3,
                                             child: AutoSizeText(
                                               disciplines[index],
-                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                             ),
                                           ),
                                         ],
@@ -119,7 +119,7 @@ class _DialogSpecialtiesState extends State<DialogSpecialties> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(MdiIcons.information, color: ThemeUtils.textColor()),
+                                      Icon(MdiIcons.information, color: ThemeUtils().theme["text"]["default"]),
                                       AutoSizeText(
                                         "Pas assez de données pour générer votre liste de spécialités.",
                                         style: TextStyle(fontFamily: "Asap"),

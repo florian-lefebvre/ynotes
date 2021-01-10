@@ -73,11 +73,11 @@ class CustomDialogs {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       title: Text(
         "Confirmation",
-        style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+        style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
       ),
       content: Text(
         alternativeText,
-        style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+        style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
       ),
       actions: [
         FlatButton(

@@ -23,12 +23,12 @@ class _ExportPageState extends State<ExportPage> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: ThemeUtils().theme["background"]["default"],
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         title: new Text(
           "Gestionnaire de sauvegarde",
-          style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+          style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
           textAlign: TextAlign.center,
         ),
       ),
@@ -46,7 +46,7 @@ class _ExportPageState extends State<ExportPage> {
                     "rappels sur un autre téléphone. L'assistant d'exportation va vous permettre d'exporter un fichier contenant toutes ces données dans un fichier .json, " +
                     "ces données seront importables à partir de ce même menu depuis un autre téléphone ou de celui à partir duquel vous effectuez l'exportation. " +
                     "Notez que vos données sont exportées en clair, il est recommandé de stocker ce fichier en sécurité et de ne pas le communiquer à quelqu'un d'autre. Notez que yNotes s'occupera automatiquement de fusionner les données sans perte.",
-                style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                 minFontSize: 0,
                 maxLines: 15,
                 textAlign: TextAlign.justify,
@@ -55,7 +55,7 @@ class _ExportPageState extends State<ExportPage> {
             SwitchListTile(
                 title: Text(
                   "Exporter mes devoirs (hors ligne et épinglés)",
-                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                 ),
                 value: exportPinnedHomework,
                 onChanged: (newValue) {
@@ -66,7 +66,7 @@ class _ExportPageState extends State<ExportPage> {
             SwitchListTile(
                 title: Text(
                   "Exporter mes évènements (rappels)",
-                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                 ),
                 value: exportEvents,
                 onChanged: (newValue) {

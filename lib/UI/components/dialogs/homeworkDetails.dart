@@ -56,7 +56,7 @@ class _DialogHomeworkState extends State<DialogHomework> {
                     padding: EdgeInsets.all(screenSize.size.width / 5 * 0.1),
                     child: Icon(
                       MdiIcons.share,
-                      color: ThemeUtils.textColor(),
+                      color: ThemeUtils().theme["text"]["default"],
                       size: screenSize.size.width / 5 * 0.5,
                     )),
               ),
@@ -102,7 +102,7 @@ class _DialogHomeworkState extends State<DialogHomework> {
                 child: SingleChildScrollView(
                   child: AutoSizeText(
                     parsedHtml,
-                    style: TextStyle(fontSize: 20, fontFamily: "Asap", color: ThemeUtils.textColor()),
+                    style: TextStyle(fontSize: 20, fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                     textAlign: TextAlign.justify,
                   ),
                 ),

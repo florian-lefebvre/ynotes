@@ -240,12 +240,12 @@ class _DrawerBuilderState extends State<DrawerBuilder> with TickerProviderStateM
                   )),
             ),
           ),
-          backgroundColor: ThemeUtils.darken(Theme.of(context).backgroundColor, forceAmount: 0.05),
+          backgroundColor: ThemeUtils.darken(ThemeUtils().theme["background"]["default"], forceAmount: 0.05),
           body: Stack(
             children: <Widget>[
               ClipRRect(
                 child: Scaffold(
-                  backgroundColor: Theme.of(context).backgroundColor,
+                  backgroundColor: ThemeUtils().theme["background"]["default"],
                   appBar: PreferredSize(
                     preferredSize: Size.fromHeight(screenSize.size.height / 10 * 0.7),
                     child: ValueListenableBuilder(

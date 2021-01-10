@@ -43,8 +43,8 @@ class _SpacePageState extends State<SpacePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     MediaQueryData screenSize = MediaQuery.of(context);
     final Map<int, Widget> spaceTabs = <int, Widget>{
-      0: Text("Outils", style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap", fontWeight: FontWeight.bold, fontSize: screenSize.size.width / 5 * 0.2)),
-      1: Text("Organisation", style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap", fontWeight: FontWeight.bold, fontSize: screenSize.size.width / 5 * 0.2))
+      0: Text("Outils", style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap", fontWeight: FontWeight.bold, fontSize: screenSize.size.width / 5 * 0.2)),
+      1: Text("Organisation", style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap", fontWeight: FontWeight.bold, fontSize: screenSize.size.width / 5 * 0.2))
     };
 
     return Container(
@@ -75,12 +75,12 @@ class _SpacePageState extends State<SpacePage> with TickerProviderStateMixin {
                     children: <Widget>[
                       Icon(
                         Icons.settings,
-                        color: ThemeUtils.textColor(),
+                        color: ThemeUtils().theme["text"]["default"],
                       ),
                       Container(
                         child: Text(
                           "Accéder aux préférences",
-                          style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap", fontWeight: FontWeight.bold, fontSize: screenSize.size.width / 5 * 0.2),
+                          style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap", fontWeight: FontWeight.bold, fontSize: screenSize.size.width / 5 * 0.2),
                         ),
                       ),
                     ],
@@ -113,12 +113,12 @@ class _SpacePageState extends State<SpacePage> with TickerProviderStateMixin {
                             },
                             child: new Icon(
                               Icons.settings,
-                              color: ThemeUtils.textColor(),
+                              color: ThemeUtils().theme["text"]["default"],
                               size: screenSize.size.height / 10 * 0.4,
                             ),
                             shape: new CircleBorder(),
                             elevation: 1.0,
-                            fillColor: ThemeUtils.textColor(),
+                            fillColor: ThemeUtils().theme["text"]["default"],
                           ),
                         ),
                       ),
@@ -198,7 +198,7 @@ class _SpacePageState extends State<SpacePage> with TickerProviderStateMixin {
                                             child: Text(
                                               "Retour",
                                               textAlign: TextAlign.center,
-                                              style: TextStyle(fontSize: 18, fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                              style: TextStyle(fontSize: 18, fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                             ),
                                           ),
                                         )

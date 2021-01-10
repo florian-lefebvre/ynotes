@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tinycolor/tinycolor.dart';
 import 'package:ynotes/usefulMethods.dart';
+import 'package:flutter/services.dart';
 
 class ThemeUtils {
   static Color spaceColor() => Color(0xff282246);
@@ -37,6 +38,69 @@ class ThemeUtils {
     final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
 
     return hslDark.toColor();
+  }
+
+  String getCurrentTheme() => isDarkModeEnabled ? "dark" : "light";
+
+  Map themes = {
+    "light": {
+      "space": {
+        "default": Color(0xff252b62),
+        "light": Color(0xff535390),
+        "dark": Color(0xff000037)
+      },
+      "text": {
+        "default": Colors.grey[700],
+        "light": Colors.grey,
+        "dark": Colors.grey[900]
+      },
+      "background": {
+        "default": Colors.grey[100],
+        "light": Colors.white,
+        "dark": Colors.grey[700]
+      }
+    },
+    "dark": {
+      "space": {
+        "default": Color(0xff252b62),
+        "light": Color(0xff535390),
+        "dark": Color(0xff000037)
+      },
+      "text": {
+        "default": Colors.grey[300],
+        "light": Colors.grey[100],
+        "dark": Colors.grey
+      },
+      "background": {
+        "default": Colors.grey[800],
+        "light": Colors.grey[600],
+        "dark": Colors.grey[900]
+      }
+    }
+  };
+
+  get theme => themes[getCurrentTheme()];
+}
+
+bool isDarkModeEnabled = false;
+
+//Change notifier to deal with themes
+class AppStateNotifier extends ChangeNotifier {
+  bool isDarkMode = false;
+  getTheme() => isDarkMode ? ThemeMode.dark : ThemeMode.light;
+
+  void updateTheme(bool isDarkMode) {
+    this.isDarkMode = isDarkMode;
+    isDarkModeEnabled = isDarkMode;
+
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        systemNavigationBarColor:
+            isDarkModeEnabled ? Color(0xff414141) : Color(0xffF3F3F3),
+        statusBarColor: Colors.transparent // navigation bar color
+        // status bar color
+        ));
+
+    notifyListeners();
   }
 }
 

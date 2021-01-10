@@ -114,19 +114,19 @@ class _LessonDetailsDialogState extends State<LessonDetailsDialog> {
                             },
                             child: new Icon(
                               Icons.edit,
-                              color: ThemeUtils.textColor(),
+                              color: ThemeUtils().theme["text"]["default"],
                               size: screenSize.size.height / 10 * 0.4,
                             ),
                             shape: new CircleBorder(),
                             elevation: 1.0,
-                            fillColor: ThemeUtils.textColor(revert: true),
+                            fillColor: ThemeUtils().theme["text"]["dark"],
                           ),
                         ),
                       ),
                     ),
                     Column(
                       children: [
-                        Container(padding: EdgeInsets.all(screenSize.size.width / 5 * 0.1), child: Text("Infos de l'évènement", style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()))),
+                        Container(padding: EdgeInsets.all(screenSize.size.width / 5 * 0.1), child: Text("Infos de l'évènement", style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]))),
                         Container(
                           padding: EdgeInsets.all(screenSize.size.width / 5 * 0.1),
                           margin: EdgeInsets.only(top: (screenSize.size.height / 10 * 0.2)),
@@ -233,7 +233,7 @@ class _LessonDetailsDialogState extends State<LessonDetailsDialog> {
                                                 child: FittedBox(
                                                   child: new Icon(
                                                     Icons.add,
-                                                    color: ThemeUtils.textColor(),
+                                                    color: ThemeUtils().theme["text"]["default"],
                                                   ),
                                                 ),
                                               ),
@@ -254,7 +254,7 @@ class _LessonDetailsDialogState extends State<LessonDetailsDialog> {
                                           children: [
                                             Text(
                                               "Ajouter un rappel",
-                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), textBaseline: TextBaseline.ideographic),
+                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], textBaseline: TextBaseline.ideographic),
                                             ),
                                           ],
                                         ),
@@ -341,7 +341,7 @@ class _LessonDetailsDialogState extends State<LessonDetailsDialog> {
                                                   child: FittedBox(
                                                     child: new Icon(
                                                       MdiIcons.bellRing,
-                                                      color: ThemeUtils.textColor(),
+                                                      color: ThemeUtils().theme["text"]["default"],
                                                     ),
                                                   ),
                                                 ),
@@ -363,7 +363,7 @@ class _LessonDetailsDialogState extends State<LessonDetailsDialog> {
                                             children: [
                                               Text(
                                                 reminders[index].name,
-                                                style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), textBaseline: TextBaseline.ideographic),
+                                                style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], textBaseline: TextBaseline.ideographic),
                                               ),
                                             ],
                                           ),

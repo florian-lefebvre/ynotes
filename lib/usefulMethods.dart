@@ -12,6 +12,7 @@ import 'package:ynotes/classes.dart';
 import 'package:ynotes/main.dart';
 import 'package:ynotes/shared_preferences.dart';
 
+import 'utils/themeUtils.dart';
 import 'UI/screens/summary/summaryPage.dart';
 
 launchURL(url) async {
@@ -27,26 +28,26 @@ List parsers = ["EcoleDirecte", "Pronote"];
 
 int chosenParser;
 
-bool isDarkModeEnabled = false;
+// bool isDarkModeEnabled = false;
 
-//Change notifier to deal with themes
-class AppStateNotifier extends ChangeNotifier {
-  bool isDarkMode = false;
-  getTheme() => isDarkMode ? ThemeMode.dark : ThemeMode.light;
+// //Change notifier to deal with themes
+// class AppStateNotifier extends ChangeNotifier {
+//   bool isDarkMode = false;
+//   getTheme() => isDarkMode ? ThemeMode.dark : ThemeMode.light;
 
-  void updateTheme(bool isDarkMode) {
-    this.isDarkMode = isDarkMode;
-    isDarkModeEnabled = isDarkMode;
+//   void updateTheme(bool isDarkMode) {
+//     this.isDarkMode = isDarkMode;
+//     isDarkModeEnabled = isDarkMode;
 
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        systemNavigationBarColor: isDarkModeEnabled ? Color(0xff414141) : Color(0xffF3F3F3),
-        statusBarColor: Colors.transparent // navigation bar color
-        // status bar color
-        ));
+//     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+//         systemNavigationBarColor: isDarkModeEnabled ? Color(0xff414141) : Color(0xffF3F3F3),
+//         statusBarColor: Colors.transparent // navigation bar color
+//         // status bar color
+//         ));
 
-    notifyListeners();
-  }
-}
+//     notifyListeners();
+//   }
+// }
 
 Route router(Widget widget) {
   return PageRouteBuilder(
@@ -112,7 +113,8 @@ setIntSetting(String setting, int value) async {
 
 class ConnectionStatusSingleton {
   //This creates the single instance by calling the `_internal` constructor specified below
-  static final ConnectionStatusSingleton _singleton = new ConnectionStatusSingleton._internal();
+  static final ConnectionStatusSingleton _singleton =
+      new ConnectionStatusSingleton._internal();
   ConnectionStatusSingleton._internal();
 
   //This is what's used to retrieve the instance through the app
@@ -122,7 +124,8 @@ class ConnectionStatusSingleton {
   bool hasConnection = false;
 
   //This is how we'll allow subscribing to connection changes
-  StreamController connectionChangeController = new StreamController.broadcast();
+  StreamController connectionChangeController =
+      new StreamController.broadcast();
 
   //flutter_connectivity
   final Connectivity _connectivity = Connectivity();
@@ -173,7 +176,8 @@ class ConnectionStatusSingleton {
 }
 
 //Get only grades as a list
-List<Grade> getAllGrades(List<Discipline> list, {bool overrideLimit = false, bool sortByWritingDate = true}) {
+List<Grade> getAllGrades(List<Discipline> list,
+    {bool overrideLimit = false, bool sortByWritingDate = true}) {
   if (localApi != null) {
     List<Grade> listToReturn = List();
     if (list != null) {
@@ -193,8 +197,10 @@ List<Grade> getAllGrades(List<Discipline> list, {bool overrideLimit = false, boo
       if (listToReturn != null) {
         //sort grades
         if (sortByWritingDate) {
-          listToReturn.sort(
-              (a, b) => (a.dateSaisie != null && b.dateSaisie != null) ? (a.dateSaisie.compareTo(b.dateSaisie)) : 1);
+          listToReturn.sort((a, b) =>
+              (a.dateSaisie != null && b.dateSaisie != null)
+                  ? (a.dateSaisie.compareTo(b.dateSaisie))
+                  : 1);
         }
 
         //remove duplicates
@@ -207,7 +213,8 @@ List<Grade> getAllGrades(List<Discipline> list, {bool overrideLimit = false, boo
         localApi.gradesList.addAll(listToReturn);
 
         if (overrideLimit == false && listToReturn != null) {
-          listToReturn = listToReturn.sublist(0, (listToReturn.length >= 5) ? 5 : listToReturn.length);
+          listToReturn = listToReturn.sublist(
+              0, (listToReturn.length >= 5) ? 5 : listToReturn.length);
         }
       }
       return listToReturn;
@@ -234,7 +241,8 @@ TValue case2<TOptionType, TValue>(
 
 List<Discipline> specialities = List<Discipline>();
 //Refresh colors
-Future<List<Discipline>> refreshDisciplinesListColors(List<Discipline> list) async {
+Future<List<Discipline>> refreshDisciplinesListColors(
+    List<Discipline> list) async {
   List<Discipline> newList = List<Discipline>();
   list.forEach((f) async {
     f.color = await getColor(f.codeMatiere);

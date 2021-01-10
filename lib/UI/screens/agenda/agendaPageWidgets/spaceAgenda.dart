@@ -99,7 +99,7 @@ class _SpaceAgendaState extends State<SpaceAgenda> {
     return Container(
         height: screenSize.size.height / 10 * 8,
         margin: EdgeInsets.only(top: screenSize.size.height / 10 * 0.2),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(screenSize.size.width / 5 * 0.15), color: ThemeUtils.spaceColor()),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(screenSize.size.width / 5 * 0.15), color: ThemeUtils().theme["space"]["default"]),
         width: screenSize.size.width,
         child: Stack(
           children: [

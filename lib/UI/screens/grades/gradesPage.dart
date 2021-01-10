@@ -258,7 +258,7 @@ class _GradesPageState extends State<GradesPage> {
                                 child: Icon(
                                   MdiIcons.borderNoneVariant,
                                   size: screenSize.size.width / 5 * 0.5,
-                                  color: ThemeUtils.textColor(),
+                                  color: ThemeUtils().theme["text"]["default"],
                                 )),
                             Container(
                               margin: EdgeInsets.only(left: screenSize.size.width / 5 * 0.2),
@@ -268,7 +268,7 @@ class _GradesPageState extends State<GradesPage> {
                                     fontSize: screenSize.size.width / 5 * 0.3,
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "Asap",
-                                    color: ThemeUtils.textColor()),
+                                    color: ThemeUtils().theme["text"]["default"]),
                               ),
                             )
                           ],
@@ -480,7 +480,7 @@ class _GradesPageState extends State<GradesPage> {
                                         ? Container(
                                             child: Text(
                                               "Pas de periode",
-                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                             ),
                                           )
                                         : DropdownButtonHideUnderline(
@@ -488,7 +488,7 @@ class _GradesPageState extends State<GradesPage> {
                                               value: periodeToUse,
                                               iconSize: 0.0,
                                               style: TextStyle(
-                                                  fontSize: 18, fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                                  fontSize: 18, fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                               onChanged: (String newValue) {
                                                 setState(() {
                                                   periodeToUse = newValue;
@@ -505,7 +505,7 @@ class _GradesPageState extends State<GradesPage> {
                                                     style: TextStyle(
                                                         fontSize: 18,
                                                         fontFamily: "Asap",
-                                                        color: ThemeUtils.textColor()),
+                                                        color: ThemeUtils().theme["text"]["default"]),
                                                   ),
                                                 );
                                               }).toList(),
@@ -536,13 +536,13 @@ class _GradesPageState extends State<GradesPage> {
                                   children: <Widget>[
                                     Icon(
                                       Icons.settings,
-                                      color: ThemeUtils.textColor(),
+                                      color: ThemeUtils().theme["text"]["default"],
                                     ),
                                     Text(
                                       "Trier",
                                       style: TextStyle(
                                         fontFamily: "Asap",
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                       ),
                                     ),
                                   ],
@@ -602,7 +602,7 @@ class _GradesPageState extends State<GradesPage> {
                                         margin: EdgeInsets.symmetric(horizontal: screenSize.size.width / 5 * 0.5),
                                         child: AutoSizeText("Pas de notes pour cette periode.",
                                             textAlign: TextAlign.center,
-                                            style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor())),
+                                            style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"])),
                                       ),
                                       FlatButton(
                                         onPressed: () {
@@ -613,7 +613,7 @@ class _GradesPageState extends State<GradesPage> {
                                             ? Text("Recharger",
                                                 style: TextStyle(
                                                     fontFamily: "Asap",
-                                                    color: ThemeUtils.textColor(),
+                                                    color: ThemeUtils().theme["text"]["default"],
                                                     fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.2))
                                             : FittedBox(
                                                 child: SpinKitThreeBounce(
@@ -641,7 +641,7 @@ class _GradesPageState extends State<GradesPage> {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily: "Asap",
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           )),
                                     ),
                                   ],
@@ -724,7 +724,7 @@ class _GradesPageState extends State<GradesPage> {
                                                         Text("Moyenne de la classe :",
                                                             style: TextStyle(
                                                                 fontFamily: "Asap",
-                                                                color: ThemeUtils.textColor(),
+                                                                color: ThemeUtils().theme["text"]["default"],
                                                                 fontSize: (screenSize.size.width / 5) * 0.18)),
                                                         Container(
                                                           margin:
@@ -756,7 +756,7 @@ class _GradesPageState extends State<GradesPage> {
                                                         Text("Meilleure moyenne :",
                                                             style: TextStyle(
                                                                 fontFamily: "Asap",
-                                                                color: ThemeUtils.textColor(),
+                                                                color: ThemeUtils().theme["text"]["default"],
                                                                 fontSize: (screenSize.size.width / 5) * 0.18)),
                                                         Container(
                                                           margin:
@@ -785,7 +785,7 @@ class _GradesPageState extends State<GradesPage> {
                                                         Text("Rang :",
                                                             style: TextStyle(
                                                                 fontFamily: "Asap",
-                                                                color: ThemeUtils.textColor(),
+                                                                color: ThemeUtils().theme["text"]["default"],
                                                                 fontSize: (screenSize.size.width / 5) * 0.18)),
                                                         Container(
                                                           margin:
@@ -819,13 +819,13 @@ class _GradesPageState extends State<GradesPage> {
                                                         Text("Moyenne du filtre ",
                                                             style: TextStyle(
                                                                 fontFamily: "Asap",
-                                                                color: ThemeUtils.textColor(),
+                                                                color: ThemeUtils().theme["text"]["default"],
                                                                 fontSize: (screenSize.size.width / 5) * 0.2)),
                                                         Text(filter,
                                                             style: TextStyle(
                                                                 fontFamily: "Asap",
                                                                 fontWeight: FontWeight.bold,
-                                                                color: ThemeUtils.textColor(),
+                                                                color: ThemeUtils().theme["text"]["default"],
                                                                 fontSize: (screenSize.size.width / 5) * 0.2)),
                                                       ],
                                                     )
@@ -889,7 +889,7 @@ class _GradesPageState extends State<GradesPage> {
                           children: <Widget>[
                             Icon(
                               Icons.error,
-                              color: ThemeUtils.textColor(),
+                              color: ThemeUtils().theme["text"]["default"],
                               size: screenSize.size.width / 8,
                             ),
                           ],
@@ -1085,7 +1085,7 @@ class _GradesGroupState extends State<GradesGroup> {
                                 "Ecrit",
                                 style: TextStyle(
                                   fontFamily: "Asap",
-                                  color: ThemeUtils.textColor(),
+                                  color: ThemeUtils().theme["text"]["default"],
                                 ),
                               )),
                       gradesList(0),
@@ -1096,7 +1096,7 @@ class _GradesGroupState extends State<GradesGroup> {
                           Text("Oral",
                               style: TextStyle(
                                 fontFamily: "Asap",
-                                color: ThemeUtils.textColor(),
+                                color: ThemeUtils().theme["text"]["default"],
                               )),
                       if (widget.disciplinevar != null)
                         if (widget.disciplinevar.codeSousMatiere.length > 0) gradesList(1),

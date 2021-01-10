@@ -46,7 +46,7 @@ class _PollsAndInfoPageState extends State<PollsAndInfoPage> {
     return Container(
       width: screenSize.size.width,
       height: screenSize.size.height,
-      color: Theme.of(context).backgroundColor,
+      color: ThemeUtils().theme["background"]["default"],
       child: Stack(
         children: [
           Align(
@@ -84,11 +84,11 @@ class _PollsAndInfoPageState extends State<PollsAndInfoPage> {
                                           children: [
                                             AutoSizeText(
                                               (snapshot.data[index].title != null ? snapshot.data[index].title + " - " : "") + DateFormat("dd/MM/yyyy").format(snapshot.data[index].datedebut),
-                                              style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                                              style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                                             ),
                                             AutoSizeText(
                                               snapshot.data[index].auteur,
-                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                             ),
                                           ],
                                         ),
@@ -114,7 +114,7 @@ class _PollsAndInfoPageState extends State<PollsAndInfoPage> {
                                                     ),
                                                     AutoSizeText(
                                                       "J'ai pris connaissance de cette information",
-                                                      style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                                      style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                                     )
                                                   ],
                                                 ),
@@ -149,7 +149,7 @@ Widget _buildPollQuestion(var data, screenSize) {
       padding: EdgeInsets.all(screenSize.size.width / 5 * 0.1),
       child: Column(
         children: [
-          HtmlWidget(mapQuestions["texte"]["V"], textStyle: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"), onTapUrl: (url) async {
+          HtmlWidget(mapQuestions["texte"]["V"], textStyle: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"), onTapUrl: (url) async {
             if (await canLaunch(url)) {
               await launch(url);
             } else {

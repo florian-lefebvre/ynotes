@@ -115,7 +115,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
               margin: EdgeInsets.all(screenSize.size.width / 5 * 0.2),
               child: Text(
                 "Mes documents",
-                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                 textAlign: TextAlign.left,
               )),
           Container(
@@ -184,7 +184,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                         children: <Widget>[
                                           Icon(
                                             MdiIcons.arrowLeft,
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           ),
                                         ],
                                       ),
@@ -229,7 +229,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                         children: <Widget>[
                                           Icon(
                                             MdiIcons.cancel,
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           ),
                                         ],
                                       ),
@@ -308,7 +308,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                         children: <Widget>[
                                           Icon(
                                             MdiIcons.cursorText,
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           ),
                                         ],
                                       ),
@@ -366,7 +366,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                               explorerSortValue.reversed_date: MdiIcons.sortDescending,
                                               explorerSortValue.name: MdiIcons.sortAlphabeticalAscending,
                                             }),
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           ),
                                   ),
                                 ],
@@ -407,7 +407,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                         children: <Widget>[
                                           Icon(
                                             Icons.content_copy,
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           ),
                                         ],
                                       ),
@@ -457,7 +457,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                       opacity: clipboard.length > 0 ? 1.0 : 0.6,
                                       child: Icon(
                                         MdiIcons.contentPaste,
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                       ),
                                     ),
                                   ],
@@ -554,7 +554,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                                     children: <Widget>[
                                                       Icon(
                                                         (_listFiles[index].element is Directory) ? MdiIcons.folder : MdiIcons.file,
-                                                        color: (_listFiles[index].element is Directory) ? Colors.yellow.shade100 : ThemeUtils.textColor().withOpacity(0.5),
+                                                        color: (_listFiles[index].element is Directory) ? Colors.yellow.shade100 : ThemeUtils().theme["text"]["default"].withOpacity(0.5),
                                                       ),
                                                       Column(
                                                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -563,7 +563,7 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                                                             width: screenSize.size.width / 5 * 3.25,
                                                             child: Text(
                                                               snapshot.data[index].fileName ?? "",
-                                                              style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.2, color: ThemeUtils.textColor()),
+                                                              style: TextStyle(fontFamily: "Asap", fontSize: screenSize.size.height / 10 * 0.2, color: ThemeUtils().theme["text"]["default"]),
                                                             ),
                                                           ),
                                                           if (snapshot.data[index].lastModifiedDate != null)
@@ -603,14 +603,14 @@ class _DownloadsExplorerState extends State<DownloadsExplorer> {
                               child: FittedBox(
                                 child: Icon(
                                   MdiIcons.downloadOffOutline,
-                                  color: ThemeUtils.textColor(),
+                                  color: ThemeUtils().theme["text"]["default"],
                                   size: screenSize.size.width / 5 * 1.5,
                                 ),
                               ),
                             ),
                             Text(
                               "Aucun élément.",
-                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: 15),
+                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: 15),
                             )
                           ],
                         ),

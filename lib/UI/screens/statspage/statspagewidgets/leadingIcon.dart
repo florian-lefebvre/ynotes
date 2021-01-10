@@ -18,7 +18,7 @@ class _LeadingAndSubtitleState extends State<LeadingAndSubtitle> {
     return Container(
       padding: EdgeInsets.all(screenSize.size.width / 5 * 0.1),
       decoration: BoxDecoration(
-          border: Border.all(color: widget.color ?? ThemeUtils.textColor()), borderRadius: BorderRadius.circular(8)),
+          border: Border.all(color: widget.color ?? ThemeUtils().theme["text"]["default"]), borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: [
           widget.leading,
@@ -26,7 +26,7 @@ class _LeadingAndSubtitleState extends State<LeadingAndSubtitle> {
             widget.subtitle,
             style: TextStyle(
                 fontFamily: "Asap",
-                color: widget.color ?? ThemeUtils.textColor(),
+                color: widget.color ?? ThemeUtils().theme["text"]["default"],
                 fontWeight: FontWeight.w200,
                 fontSize: 14),
           )

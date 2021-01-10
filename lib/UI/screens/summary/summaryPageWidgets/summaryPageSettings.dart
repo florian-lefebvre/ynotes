@@ -29,7 +29,7 @@ class _SummaryPageSettingsState extends State<SummaryPageSettings> {
               margin: EdgeInsets.all(screenSize.size.width / 5 * 0.2),
               child: Text(
                 "Paramètres des devoirs rapides",
-                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                 textAlign: TextAlign.left,
               )),
           Container(
@@ -59,7 +59,7 @@ class _SummaryPageSettingsState extends State<SummaryPageSettings> {
                         child: AutoSizeText(
                           "Devoirs sur :\n" + (_slider.toString() == "11" ? "∞" : _slider.toString()) + " jour" + (_slider > 1 ? "s" : ""),
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontFamily: "Asap", fontSize: 15, color: ThemeUtils.textColor()),
+                          style: TextStyle(fontFamily: "Asap", fontSize: 15, color: ThemeUtils().theme["text"]["default"]),
                         ),
                       )
                     ],

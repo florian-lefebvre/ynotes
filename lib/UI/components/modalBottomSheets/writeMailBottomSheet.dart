@@ -87,7 +87,7 @@ class _WriteMailBottomSheetState extends State<WriteMailBottomSheet> {
                               Navigator.pop(context);
                             }
                           },
-                          icon: Icon(MdiIcons.arrowLeft, color: ThemeUtils.textColor()),
+                          icon: Icon(MdiIcons.arrowLeft, color: ThemeUtils().theme["text"]["default"]),
                         ),
                       ),
                       SizedBox(
@@ -95,7 +95,7 @@ class _WriteMailBottomSheetState extends State<WriteMailBottomSheet> {
                       ),
                       AutoSizeText(
                         "Ecrire un mail",
-                        style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                        style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                       )
                     ],
                   ),
@@ -116,7 +116,7 @@ class _WriteMailBottomSheetState extends State<WriteMailBottomSheet> {
                               CustomDialogs.showAnyDialog(context, "Ajoutez au moins un destinataire.");
                             }
                           },
-                          icon: Icon(Icons.send, color: ThemeUtils.textColor()),
+                          icon: Icon(Icons.send, color: ThemeUtils().theme["text"]["default"]),
                         ),
                       ],
                     ),
@@ -175,7 +175,7 @@ class _WriteMailBottomSheetState extends State<WriteMailBottomSheet> {
                             });
                           }
                         },
-                        icon: Icon(Icons.add, color: ThemeUtils.textColor()),
+                        icon: Icon(Icons.add, color: ThemeUtils().theme["text"]["default"]),
                       ),
                     ),
                   ),
@@ -212,7 +212,7 @@ class _WriteMailBottomSheetState extends State<WriteMailBottomSheet> {
                             });
                           }
                         },
-                        icon: Icon(Icons.contact_page, color: ThemeUtils.textColor()),
+                        icon: Icon(Icons.contact_page, color: ThemeUtils().theme["text"]["default"]),
                       ),
                     ),
                   ),
@@ -228,7 +228,7 @@ class _WriteMailBottomSheetState extends State<WriteMailBottomSheet> {
               child: TextField(
                 controller: subjectController,
                 maxLines: 1,
-                style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.width / 5 * 0.35),
+                style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.width / 5 * 0.35),
                 decoration: new InputDecoration(
                   border: OutlineInputBorder(),
                   contentPadding: EdgeInsets.symmetric(horizontal: screenSize.size.width / 5 * 0.05, vertical: 0),

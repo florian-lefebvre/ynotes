@@ -130,7 +130,7 @@ class _QuickHomeworkState extends State<QuickHomework> {
                             Text(
                               "A faire",
                               textAlign: TextAlign.center,
-                              style: TextStyle(fontFamily: "Asap", fontSize: 18, color: ThemeUtils.textColor()),
+                              style: TextStyle(fontFamily: "Asap", fontSize: 18, color: ThemeUtils().theme["text"]["default"]),
                             ),
                           ],
                         ),
@@ -172,7 +172,7 @@ class _QuickHomeworkState extends State<QuickHomework> {
                                                           child: new Container(
                                                               margin: const EdgeInsets.only(left: 10.0, right: 20.0),
                                                               child: Divider(
-                                                                color: ThemeUtils.textColor(),
+                                                                color: ThemeUtils().theme["text"]["default"],
                                                                 height: 36,
                                                               )),
                                                         ),
@@ -181,13 +181,13 @@ class _QuickHomeworkState extends State<QuickHomework> {
                                                               .format(hwcontroller.getHomework[index].date)
                                                               .toString(),
                                                           style: TextStyle(
-                                                              color: ThemeUtils.textColor(), fontFamily: "Asap"),
+                                                              color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
                                                         ),
                                                         Expanded(
                                                           child: Container(
                                                               margin: const EdgeInsets.only(left: 20.0, right: 10.0),
                                                               child: Divider(
-                                                                color: ThemeUtils.textColor(),
+                                                                color: ThemeUtils().theme["text"]["default"],
                                                                 height: 36,
                                                               )),
                                                         ),
@@ -219,17 +219,17 @@ class _QuickHomeworkState extends State<QuickHomework> {
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                       fontFamily: "Asap",
-                                                      color: ThemeUtils.textColor(),
+                                                      color: ThemeUtils().theme["text"]["default"],
                                                       fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.2),
                                                 ),
                                                 FlatButton(
-                                                    textColor: ThemeUtils.textColor(),
+                                                    textColor: ThemeUtils().theme["text"]["default"],
                                                     onPressed: () async {
                                                       await model.refresh(force: true);
                                                     },
                                                     shape: RoundedRectangleBorder(
                                                         side: BorderSide(
-                                                            color: ThemeUtils.textColor(),
+                                                            color: ThemeUtils().theme["text"]["default"],
                                                             width: 0.2,
                                                             style: BorderStyle.solid),
                                                         borderRadius: BorderRadius.circular(50)),
@@ -237,7 +237,7 @@ class _QuickHomeworkState extends State<QuickHomework> {
                                                         ? Text("Recharger",
                                                             style: TextStyle(
                                                               fontFamily: "Asap",
-                                                              color: ThemeUtils.textColor(),
+                                                              color: ThemeUtils().theme["text"]["default"],
                                                             ))
                                                         : FittedBox(
                                                             child: SpinKitThreeBounce(

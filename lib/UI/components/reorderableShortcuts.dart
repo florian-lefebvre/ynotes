@@ -22,7 +22,7 @@ class _ReorderableShortcutsState extends State<ReorderableShortcuts> {
         children: [
           Icon(
             MdiIcons.menu,
-            color: ThemeUtils.textColor(),
+            color: ThemeUtils().theme["text"]["default"],
           ),
           SizedBox(
             width: screenSize.size.width / 5 * 0.1,

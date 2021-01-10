@@ -45,7 +45,7 @@ class _TextFieldChoiceDialogState extends State<TextFieldChoiceDialog> {
             Container(
               child: Text(
                 "Choisir ${widget.unit}",
-                style: TextStyle(fontFamily: 'Asap', color: ThemeUtils.textColor()),
+                style: TextStyle(fontFamily: 'Asap', color: ThemeUtils().theme["text"]["default"]),
                 textAlign: TextAlign.left,
               ),
             ),
@@ -57,10 +57,10 @@ class _TextFieldChoiceDialogState extends State<TextFieldChoiceDialog> {
                 autofocus: true,
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: ThemeUtils.textColor()),
+                    borderSide: BorderSide(color: ThemeUtils().theme["text"]["default"]),
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: ThemeUtils.textColor()),
+                    borderSide: BorderSide(color: ThemeUtils().theme["text"]["default"]),
                   ),
                 ),
                 onChanged: (newValue) {
@@ -70,7 +70,7 @@ class _TextFieldChoiceDialogState extends State<TextFieldChoiceDialog> {
                 },
                 style: TextStyle(
                   fontFamily: 'Asap',
-                  color: ThemeUtils.textColor(),
+                  color: ThemeUtils().theme["text"]["default"],
                 ),
               ),
             ),

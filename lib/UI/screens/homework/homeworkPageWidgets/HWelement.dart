@@ -199,13 +199,13 @@ class _HomeworkElementState extends State<HomeworkElement> with TickerProviderSt
                                         Container(
                                             child: Text(
                                           this.widget.homeworkForThisDay.nomProf,
-                                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                         )),
                                       HtmlWidget(
                                           segmentedControlIndex == 0
                                               ? this.widget.homeworkForThisDay.contenu
                                               : this.widget.homeworkForThisDay.contenuDeSeance,
-                                          textStyle: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"),
+                                          textStyle: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
                                           customWidgetBuilder: (element) {
                                         if (element.attributes['class'] == 'math-tex') {
                                           try {
@@ -213,7 +213,7 @@ class _HomeworkElementState extends State<HomeworkElement> with TickerProviderSt
                                                 child: TeXView(
                                               child: TeXViewDocument(element.text,
                                                   style: TeXViewStyle.fromCSS(
-                                                      """background-color: #${(isDarkModeEnabled ? ThemeUtils.darken(Theme.of(context).primaryColorDark, forceAmount: 0.1) : ThemeUtils.darken(Theme.of(context).primaryColor, forceAmount: 0.03)).toCSSColor()}; color: #${ThemeUtils.textColor().toCSSColor()}""")),
+                                                      """background-color: #${(isDarkModeEnabled ? ThemeUtils.darken(Theme.of(context).primaryColorDark, forceAmount: 0.1) : ThemeUtils.darken(Theme.of(context).primaryColor, forceAmount: 0.03)).toCSSColor()}; color: #${ThemeUtils().theme["text"]["default"].toCSSColor()}""")),
                                             ));
                                           } catch (e) {
                                             return Container();

@@ -56,7 +56,7 @@ class AgendaPageState extends State<AgendaPage> {
                         maxHeight: screenSize.size.height / 10 * 8,
                         spaceBetween: screenSize.size.height / 10 * 0.3,
                         width: screenSize.size.width,
-                        bottomExpandableColor: ThemeUtils.spaceColor(),
+                        bottomExpandableColor: ThemeUtils().theme["space"]["default"],
                         onDragUpdate: handleDragUpdate,
                         animationDuration: 200,
                         topExpandableBorderRadius: 0,
@@ -93,7 +93,7 @@ class AgendaPageState extends State<AgendaPage> {
                         margin: EdgeInsets.only(left: screenSize.size.width / 5 * 0.1),
                         child: AutoSizeText(
                           "Agenda",
-                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontWeight: FontWeight.bold),
+                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontWeight: FontWeight.bold),
                         )),
                   ),
                   Align(
@@ -104,7 +104,7 @@ class AgendaPageState extends State<AgendaPage> {
                         angle: pi * (topPercents / 100),
                         child: Icon(
                           MdiIcons.arrowDownThick,
-                          color: ThemeUtils.textColor(),
+                          color: ThemeUtils().theme["text"]["default"],
                         ),
                       ),
                     ),

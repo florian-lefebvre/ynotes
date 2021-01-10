@@ -59,7 +59,7 @@ class _AgendaButtonsState extends State<AgendaButtons> {
           children: [
             Text(
               weekName,
-              style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"),
+              style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +87,7 @@ class _AgendaButtonsState extends State<AgendaButtons> {
                               children: <Widget>[
                                 Icon(
                                   MdiIcons.arrowLeftCircleOutline,
-                                  color: ThemeUtils.textColor(),
+                                  color: ThemeUtils().theme["text"]["default"],
                                 ),
                               ],
                             ),
@@ -152,7 +152,7 @@ class _AgendaButtonsState extends State<AgendaButtons> {
                                   DateFormat("EEEE dd MMMM", "fr_FR").format(agendaDate),
                                   style: TextStyle(
                                     fontFamily: "Asap",
-                                    color: ThemeUtils.textColor(),
+                                    color: ThemeUtils().theme["text"]["default"],
                                   ),
                                 ),
                               ],
@@ -185,7 +185,7 @@ class _AgendaButtonsState extends State<AgendaButtons> {
                               children: <Widget>[
                                 Icon(
                                   MdiIcons.arrowRightCircleOutline,
-                                  color: ThemeUtils.textColor(),
+                                  color: ThemeUtils().theme["text"]["default"],
                                 ),
                               ],
                             ),

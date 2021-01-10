@@ -72,19 +72,19 @@ class _HomeworkFirstPageState extends State<HomeworkFirstPage> {
                                               child: new Container(
                                                   margin: const EdgeInsets.only(left: 10.0, right: 20.0),
                                                   child: Divider(
-                                                    color: ThemeUtils.textColor(),
+                                                    color: ThemeUtils().theme["text"]["default"],
                                                     height: 36,
                                                   )),
                                             ),
                                             Text(
                                               getWeeksRelation(index, model.getHomework),
-                                              style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"),
+                                              style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
                                             ),
                                             Expanded(
                                               child: new Container(
                                                   margin: const EdgeInsets.only(left: 20.0, right: 10.0),
                                                   child: Divider(
-                                                    color: ThemeUtils.textColor(),
+                                                    color: ThemeUtils().theme["text"]["default"],
                                                     height: 36,
                                                   )),
                                             ),
@@ -109,7 +109,7 @@ class _HomeworkFirstPageState extends State<HomeworkFirstPage> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: "Asap",
-                                  color: ThemeUtils.textColor(),
+                                  color: ThemeUtils().theme["text"]["default"],
                                 ),
                               ),
                               FlatButton(
@@ -121,7 +121,7 @@ class _HomeworkFirstPageState extends State<HomeworkFirstPage> {
                                     ? Text("Recharger",
                                         style: TextStyle(
                                           fontFamily: "Asap",
-                                          color: ThemeUtils.textColor(),
+                                          color: ThemeUtils().theme["text"]["default"],
                                         ))
                                     : FittedBox(
                                         child: SpinKitThreeBounce(

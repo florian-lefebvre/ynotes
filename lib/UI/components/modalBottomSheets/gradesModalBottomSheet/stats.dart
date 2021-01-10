@@ -75,7 +75,7 @@ class _ImpactState extends State<ImpactStat> {
                 AutoSizeText(
                   widget.label ?? "",
                   maxLines: 2,
-                  style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.w600, color: ThemeUtils.textColor()),
+                  style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.w600, color: ThemeUtils().theme["text"]["default"]),
                   textAlign: TextAlign.left,
                 )
               ],

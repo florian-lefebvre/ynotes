@@ -56,15 +56,15 @@ class _AgendaSettingsState extends State<AgendaSettings> {
               margin: EdgeInsets.all(screenSize.size.width / 5 * 0.2),
               child: Text(
                 "Paramètres de l'agenda",
-                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                 textAlign: TextAlign.left,
               )),
           SwitchListTile(
             value: boolSettings["lighteningOverride"],
-            title: Text("Ignorer la réduction de stockage hors ligne", style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.21)),
+            title: Text("Ignorer la réduction de stockage hors ligne", style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.21)),
             subtitle: Text(
               "Stocke plus de semaines hors ligne mais augmente la taille de l'application",
-              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.16),
+              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.16),
             ),
             onChanged: (value) async {
               setState(() {
@@ -75,12 +75,12 @@ class _AgendaSettingsState extends State<AgendaSettings> {
             },
             secondary: Icon(
               MdiIcons.zipBox,
-              color: ThemeUtils.textColor(),
+              color: ThemeUtils().theme["text"]["default"],
             ),
           ),
           SwitchListTile(
             value: boolSettings["reverseWeekNames"],
-            title: Text("Inverser semaines A et B", style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.21)),
+            title: Text("Inverser semaines A et B", style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.21)),
             onChanged: (value) async {
               setState(() {
                 boolSettings["reverseWeekNames"] = value;
@@ -90,14 +90,14 @@ class _AgendaSettingsState extends State<AgendaSettings> {
             },
             secondary: Icon(
               MdiIcons.calendarWeek,
-              color: ThemeUtils.textColor(),
+              color: ThemeUtils().theme["text"]["default"],
             ),
           ),
           ListTile(
-            title: Text("Me rappeler les cours", style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.21)),
+            title: Text("Me rappeler les cours", style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.21)),
             subtitle: Text(
               "${(intSettings["lessonReminderDelay"]).toString()} minutes avant",
-              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.16),
+              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.16),
             ),
             onTap: () async {
               var value = await CustomDialogs.showNumberChoiceDialog(context, text: "la durée");
@@ -111,15 +111,15 @@ class _AgendaSettingsState extends State<AgendaSettings> {
             },
             leading: Icon(
               MdiIcons.clockAlert,
-              color: ThemeUtils.textColor(),
+              color: ThemeUtils().theme["text"]["default"],
             ),
           ),
           if (Platform.isAndroid)
             ListTile(
-              title: Text("Notification constante", style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.21)),
+              title: Text("Notification constante", style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.21)),
               subtitle: Text(
                 boolSettings["agendaOnGoingNotification"] ? "Activée" : "Désactivée",
-                style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.16),
+                style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.16),
               ),
               onTap: () async {
                 await CustomDialogs.showPersistantNotificationDialog(context);
@@ -128,7 +128,7 @@ class _AgendaSettingsState extends State<AgendaSettings> {
               },
               leading: Icon(
                 MdiIcons.viewAgendaOutline,
-                color: ThemeUtils.textColor(),
+                color: ThemeUtils().theme["text"]["default"],
               ),
             ),
         ],

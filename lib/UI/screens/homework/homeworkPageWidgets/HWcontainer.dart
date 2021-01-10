@@ -146,7 +146,7 @@ class _HomeworkContainerState extends State<HomeworkContainer> {
                                     mainLabel,
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                         fontFamily: "Asap",
                                         fontSize: screenSize.size.height / 10 * 0.4,
                                         fontWeight: FontWeight.w600),

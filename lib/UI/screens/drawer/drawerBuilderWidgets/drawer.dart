@@ -106,7 +106,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: ThemeUtils.spaceColor(),
+                    color: ThemeUtils().theme["space"]["default"],
                   ),
                 ),
               ),
@@ -124,7 +124,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                               borderRadius:
                                   BorderRadius.only(topRight: Radius.circular(11), bottomRight: Radius.circular(11)),
                               color: (entries.indexOf(entry) == value)
-                                  ? Theme.of(context).backgroundColor
+                                  ? ThemeUtils().theme["background"]["default"]
                                   : Colors.transparent,
                               child: InkWell(
                                 splashFactory: InkRipple.splashFactory,
@@ -143,7 +143,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                                       Icon(
                                         entry["icon"],
                                         size: screenSize.size.width / 5 * 0.3,
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                       ),
                                       SizedBox(
                                         width: screenSize.size.width / 5 * 0.1,
@@ -151,7 +151,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                                       Text(entry["menuName"],
                                           style: TextStyle(
                                               fontFamily: "Asap",
-                                              color: ThemeUtils.textColor(),
+                                              color: ThemeUtils().theme["text"]["default"],
                                               fontSize: screenSize.size.width / 5 * 0.3)),
                                     ],
                                   ),
@@ -188,7 +188,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       Icon(
                         Icons.settings,
                         size: screenSize.size.width / 5 * 0.3,
-                        color: ThemeUtils.textColor(),
+                        color: ThemeUtils().theme["text"]["default"],
                       ),
                       SizedBox(
                         width: screenSize.size.width / 5 * 0.1,
@@ -196,7 +196,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       Text("Préférences",
                           style: TextStyle(
                               fontFamily: "Asap",
-                              color: ThemeUtils.textColor(),
+                              color: ThemeUtils().theme["text"]["default"],
                               fontSize: screenSize.size.width / 5 * 0.3)),
                     ],
                   ),

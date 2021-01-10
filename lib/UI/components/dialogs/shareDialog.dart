@@ -113,12 +113,12 @@ class _ShareBoxState extends State<ShareBox> {
                                           : "",
                                       style: TextStyle(
                                         fontFamily: "Asap",
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                       )),
                                   Text(widget.grade.devoir,
                                       style: TextStyle(
                                           fontFamily: "Asap",
-                                          color: ThemeUtils.textColor(),
+                                          color: ThemeUtils().theme["text"]["default"],
                                           fontWeight: FontWeight.bold),
                                       textAlign: TextAlign.center),
                                   SizedBox(
@@ -127,7 +127,7 @@ class _ShareBoxState extends State<ShareBox> {
                                   Text("Ma note :",
                                       style: TextStyle(
                                           fontFamily: "Asap",
-                                          color: ThemeUtils.textColor(),
+                                          color: ThemeUtils().theme["text"]["default"],
                                           fontWeight: FontWeight.w300,
                                           fontSize: screenSize.size.height / 10 * 0.2),
                                       textAlign: TextAlign.center),
@@ -143,7 +143,7 @@ class _ShareBoxState extends State<ShareBox> {
                                         TextSpan(
                                           text: widget.grade.valeur,
                                           style: TextStyle(
-                                              color: ThemeUtils.textColor(),
+                                              color: ThemeUtils().theme["text"]["default"],
                                               fontFamily: "Asap",
                                               fontWeight: FontWeight.bold,
                                               fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.3),
@@ -154,7 +154,7 @@ class _ShareBoxState extends State<ShareBox> {
                                               TextSpan(
                                                   text: '/' + widget.grade.noteSur,
                                                   style: TextStyle(
-                                                      color: ThemeUtils.textColor(),
+                                                      color: ThemeUtils().theme["text"]["default"],
                                                       fontWeight: FontWeight.bold,
                                                       fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.2)),
                                           ],
@@ -171,7 +171,7 @@ class _ShareBoxState extends State<ShareBox> {
                             right: screenSize.size.width / 5 * 0.1,
                             child: Image(
                               image: AssetImage('assets/images/LogoYNotes.png'),
-                              color: ThemeUtils.spaceColor(),
+                              color: ThemeUtils().theme["space"]["default"],
                               height: screenSize.size.height / 10 * 0.3,
                               width: screenSize.size.width / 5 * 0.4,
                             ),
@@ -194,7 +194,7 @@ class _ShareBoxState extends State<ShareBox> {
                       padding: EdgeInsets.all(screenSize.size.width / 5 * 0.1),
                       child: Icon(
                         MdiIcons.share,
-                        color: ThemeUtils.textColor(),
+                        color: ThemeUtils().theme["text"]["default"],
                         size: screenSize.size.width / 5 * 0.5,
                       )),
                 ),

@@ -47,7 +47,7 @@ class _QuickGradesState extends State<QuickGrades> {
           TextSpan(
             text: (grade.nonSignificatif ? "(" + grade.valeur : grade.valeur),
             style: TextStyle(
-                color: (ThemeUtils.textColor()),
+                color: (ThemeUtils().theme["text"]["default"]),
                 fontFamily: "Asap",
                 fontWeight: FontWeight.normal,
                 fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.5),
@@ -57,14 +57,14 @@ class _QuickGradesState extends State<QuickGrades> {
                 TextSpan(
                     text: '/' + grade.noteSur,
                     style: TextStyle(
-                        color: (ThemeUtils.textColor()),
+                        color: (ThemeUtils().theme["text"]["default"]),
                         fontWeight: FontWeight.normal,
                         fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.4)),
               if (grade.nonSignificatif == true)
                 TextSpan(
                     text: ")",
                     style: TextStyle(
-                        color: (ThemeUtils.textColor()),
+                        color: (ThemeUtils().theme["text"]["default"]),
                         fontWeight: FontWeight.normal,
                         fontSize: (screenSize.size.height / 10 * 8.8) / 10 * 0.5)),
             ],
@@ -93,19 +93,19 @@ class _QuickGradesState extends State<QuickGrades> {
             children: [
               Text(
                 grade.libelleMatiere ?? "",
-                style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"),
+                style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
                 textAlign: TextAlign.left,
               )
             ],
           ),
           Text(
             grade.devoir ?? "",
-            style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap", fontWeight: FontWeight.bold),
+            style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap", fontWeight: FontWeight.bold),
             textAlign: TextAlign.left,
           ),
           Text(
             grade.date != null ? df.format(grade.dateSaisie) : "",
-            style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"),
+            style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
             textAlign: TextAlign.left,
           )
         ],
@@ -122,7 +122,7 @@ class _QuickGradesState extends State<QuickGrades> {
         child: Center(
           child: Text(
             "Vos notes apparaîtront ici.",
-            style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+            style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
           ),
         ),
       );
@@ -137,7 +137,7 @@ class _QuickGradesState extends State<QuickGrades> {
           cacheExtent: screenSize.size.width / 5 * 1.8,
           header: ClassicHeader(
             height: screenSize.size.width / 5 * 1.8,
-            textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+            textStyle: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
             refreshingText: "Chargement...",
             completeText: "Terminé !",
             failedText: "Une erreur a eu lieu...",

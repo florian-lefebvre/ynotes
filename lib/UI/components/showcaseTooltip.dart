@@ -26,19 +26,19 @@ class ShowCaseToolTip extends StatelessWidget {
                 children: [
                   Icon(
                     MdiIcons.information,
-                    color: ThemeUtils.textColor(),
+                    color: ThemeUtils().theme["text"]["default"],
                   ),
                   Text(
                     title,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                    style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                   ),
                 ],
               ),
               Text(
                 desc,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
               ),
             ],
           ),

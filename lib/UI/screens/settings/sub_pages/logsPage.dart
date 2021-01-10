@@ -18,7 +18,7 @@ class _LogsPageState extends State<LogsPage> {
   Widget build(BuildContext context) {
     MediaQueryData screenSize = MediaQuery.of(context);
     return Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: ThemeUtils().theme["background"]["default"],
         appBar: new AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           title: new Text("Logs"),
@@ -59,7 +59,7 @@ class _LogsPageState extends State<LogsPage> {
                                 reverse: true,
                                 child: SelectableText(
                                   snapshot.data,
-                                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                 ),
                               )));
                     } else {

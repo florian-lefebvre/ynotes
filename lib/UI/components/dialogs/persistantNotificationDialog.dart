@@ -110,7 +110,7 @@ class _PersistantNotificationConfigDialogState extends State<PersistantNotificat
                           TextSpan(text: ' dans le panneau de contrôle de votre appareil.'),
                         ],
                       ),
-                      style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"),
+                      style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
                     ),
                   )
                 ],
@@ -120,7 +120,7 @@ class _PersistantNotificationConfigDialogState extends State<PersistantNotificat
               value: boolSettings["agendaOnGoingNotification"],
               title: Text("Activée",
                   style: TextStyle(
-                      fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.21)),
+                      fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.21)),
               onChanged: (value) async {
                 if ((await Permission.ignoreBatteryOptimizations.isGranted)) {
                   setState(() {
@@ -154,7 +154,7 @@ class _PersistantNotificationConfigDialogState extends State<PersistantNotificat
               },
               secondary: Icon(
                 MdiIcons.power,
-                color: ThemeUtils.textColor(),
+                color: ThemeUtils().theme["text"]["default"],
               ),
             ),
             Divider(
@@ -164,7 +164,7 @@ class _PersistantNotificationConfigDialogState extends State<PersistantNotificat
               value: boolSettings["enableDNDWhenOnGoingNotifEnabled"],
               title: Text("Activer le mode ne pas déranger à l'entrée en cours",
                   style: TextStyle(
-                      fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.20)),
+                      fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.20)),
               onChanged: (value) async {
                 setState(() {
                   boolSettings["enableDNDWhenOnGoingNotifEnabled"] = value;
@@ -184,14 +184,14 @@ class _PersistantNotificationConfigDialogState extends State<PersistantNotificat
               },
               secondary: Icon(
                 MdiIcons.moonWaningCrescent,
-                color: ThemeUtils.textColor(),
+                color: ThemeUtils().theme["text"]["default"],
               ),
             ),
             SwitchListTile(
               value: boolSettings["disableAtDayEnd"],
               title: Text("Desactiver en fin de journée",
                   style: TextStyle(
-                      fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.20)),
+                      fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.20)),
               onChanged: (value) async {
                 setState(() {
                   boolSettings["disableAtDayEnd"] = value;
@@ -201,17 +201,17 @@ class _PersistantNotificationConfigDialogState extends State<PersistantNotificat
               },
               secondary: Icon(
                 MdiIcons.powerOff,
-                color: ThemeUtils.textColor(),
+                color: ThemeUtils().theme["text"]["default"],
               ),
             ),
             ListTile(
               title: Text("Réparer les permissions",
                   style: TextStyle(
-                      fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.21)),
+                      fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.21)),
               subtitle: Text(
                 perm,
                 style: TextStyle(
-                    fontFamily: "Asap", color: ThemeUtils.textColor(), fontSize: screenSize.size.height / 10 * 0.16),
+                    fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"], fontSize: screenSize.size.height / 10 * 0.16),
               ),
               onTap: () async {
                 if (!(await BatteryOptimization.isIgnoringBatteryOptimizations()) &&
@@ -223,7 +223,7 @@ class _PersistantNotificationConfigDialogState extends State<PersistantNotificat
               },
               leading: Icon(
                 MdiIcons.autoFix,
-                color: ThemeUtils.textColor(),
+                color: ThemeUtils().theme["text"]["default"],
               ),
             ),
           ],

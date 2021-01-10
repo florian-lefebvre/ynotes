@@ -213,7 +213,7 @@ class _AgendaGridState extends State<AgendaGrid> {
       duration: Duration(milliseconds: 250),
       decoration: BoxDecoration(
           color: widget.afterSchool
-              ? ThemeUtils.darken(ThemeUtils.spaceColor(), forceAmount: 0.01).withOpacity(0.9)
+              ? ThemeUtils.darken(ThemeUtils().theme["space"]["default"], forceAmount: 0.01).withOpacity(0.9)
               : Theme.of(context).primaryColorDark.withOpacity(0.9),
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(5),
@@ -302,7 +302,7 @@ class _AgendaGridState extends State<AgendaGrid> {
                                           _events.where((element) => element.wholeDay).toList()[index].name != "")
                                       ? _events.where((element) => element.wholeDay).toList()[index].name
                                       : "(sans nom)",
-                                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                 ),
                               ),
                             ),

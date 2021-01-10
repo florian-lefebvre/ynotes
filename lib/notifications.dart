@@ -31,7 +31,7 @@ class LocalNotification {
             channelKey: 'alarm',
             channelName: 'Alarmes',
             channelDescription: 'Alarmes',
-            defaultColor: ThemeUtils.spaceColor(),
+            defaultColor: ThemeUtils().theme["space"]["default"],
             ledColor: Colors.white),
       ]);
 
@@ -82,7 +82,7 @@ class LocalNotification {
           channelName: 'Notification de déboguage',
           importance: NotificationImportance.High,
           channelDescription: "Notification à usage de développement",
-          defaultColor: ThemeUtils.spaceColor(),
+          defaultColor: ThemeUtils().theme["space"]["default"],
           ledColor: Colors.white)
     ]);
 
@@ -139,7 +139,7 @@ class LocalNotification {
           channelName: 'Nouvelle note',
           importance: NotificationImportance.High,
           channelDescription: "Nouvelles notes",
-          defaultColor: ThemeUtils.spaceColor(),
+          defaultColor: ThemeUtils().theme["space"]["default"],
           ledColor: Colors.white)
     ]);
 
@@ -161,7 +161,7 @@ class LocalNotification {
           channelShowBadge: true,
           channelName: 'Rappel pour un évènement',
           importance: NotificationImportance.High,
-          defaultColor: ThemeUtils.spaceColor(),
+          defaultColor: ThemeUtils().theme["space"]["default"],
           ledColor: Colors.white)
     ]);
     List<AgendaReminder> reminders = await offline.reminders.getReminders(event.lesson.id);
@@ -215,7 +215,7 @@ class LocalNotification {
             channelName: 'Rappel de cours constant',
             importance: NotificationImportance.Low,
             channelDescription: "Notification persistante de cours",
-            defaultColor: ThemeUtils.spaceColor(),
+            defaultColor: ThemeUtils().theme["space"]["default"],
             ledColor: Colors.white,
             onlyAlertOnce: true)
       ]);

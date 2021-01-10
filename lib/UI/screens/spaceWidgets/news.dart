@@ -37,7 +37,7 @@ class _NewsState extends State<News> {
                 margin: EdgeInsets.all(screenSize.size.width / 5 * 0.2),
                 child: Text(
                   "Actualité",
-                  style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils.textColor()),
+                  style: TextStyle(fontFamily: "Asap", fontWeight: FontWeight.bold, color: ThemeUtils().theme["text"]["default"]),
                   textAlign: TextAlign.left,
                 )),
             Container(
@@ -55,7 +55,7 @@ class _NewsState extends State<News> {
                               children: <Widget>[
                                 Text(
                                   "Une erreur a eu lieu",
-                                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                  style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                 ),
                                 FlatButton(
                                   onPressed: () {
@@ -64,7 +64,7 @@ class _NewsState extends State<News> {
                                   child: Text("Recharger",
                                       style: TextStyle(
                                         fontFamily: "Asap",
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                       )),
                                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0), side: BorderSide(color: Theme.of(context).primaryColorDark)),
                                 ),

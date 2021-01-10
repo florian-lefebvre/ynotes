@@ -51,7 +51,7 @@ class _MultipleChoicesDialogState extends State<MultipleChoicesDialog> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(margin: EdgeInsets.only(top: screenSize.size.width / 5 * 0.2), height: (screenSize.size.height / 10 * 8.8) / 10 * 0.75, width: screenSize.size.width / 5 * 2, child: Icon(MdiIcons.check, color: ThemeUtils.textColor())),
+                      Container(margin: EdgeInsets.only(top: screenSize.size.width / 5 * 0.2), height: (screenSize.size.height / 10 * 8.8) / 10 * 0.75, width: screenSize.size.width / 5 * 2, child: Icon(MdiIcons.check, color: ThemeUtils().theme["text"]["default"])),
                     ],
                   ),
                 ),
@@ -70,7 +70,7 @@ class _MultipleChoicesDialogState extends State<MultipleChoicesDialog> {
                       child: Row(
                         children: <Widget>[
                           CircularCheckBox(
-                            inactiveColor: ThemeUtils.textColor(),
+                            inactiveColor: ThemeUtils().theme["text"]["default"],
                             onChanged: (value) {
                               if (widget.singleChoice) {
                                 indexsSelected.clear();
@@ -95,7 +95,7 @@ class _MultipleChoicesDialogState extends State<MultipleChoicesDialog> {
                             width: screenSize.size.width / 5 * 3,
                             child: AutoSizeText(
                               widget.choices[index].toString(),
-                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                              style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                             ),
                           ),
                         ],

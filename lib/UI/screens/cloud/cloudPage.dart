@@ -122,13 +122,13 @@ class _CloudPageState extends State<CloudPage> {
                                     children: <Widget>[
                                       Icon(
                                         MdiIcons.arrowLeft,
-                                        color: ThemeUtils.textColor(),
+                                        color: ThemeUtils().theme["text"]["default"],
                                       ),
                                       Text("Retour",
                                           style: TextStyle(
                                             fontFamily: "Asap",
                                             fontSize: 15,
-                                            color: ThemeUtils.textColor(),
+                                            color: ThemeUtils().theme["text"]["default"],
                                           )),
                                     ],
                                   ),
@@ -180,19 +180,19 @@ class _CloudPageState extends State<CloudPage> {
                                                       child: new Container(
                                                           margin: const EdgeInsets.only(left: 10.0, right: 20.0),
                                                           child: Divider(
-                                                            color: ThemeUtils.textColor(),
+                                                            color: ThemeUtils().theme["text"]["default"],
                                                             height: 36,
                                                           )),
                                                     ),
                                                     Text(
                                                       "Autres clouds",
-                                                      style: TextStyle(color: ThemeUtils.textColor(), fontFamily: "Asap"),
+                                                      style: TextStyle(color: ThemeUtils().theme["text"]["default"], fontFamily: "Asap"),
                                                     ),
                                                     Expanded(
                                                       child: new Container(
                                                           margin: const EdgeInsets.only(left: 20.0, right: 10.0),
                                                           child: Divider(
-                                                            color: ThemeUtils.textColor(),
+                                                            color: ThemeUtils().theme["text"]["default"],
                                                             height: 36,
                                                           )),
                                                     ),
@@ -257,7 +257,7 @@ class _CloudPageState extends State<CloudPage> {
                                                                           style: TextStyle(
                                                                             fontFamily: "Asap",
                                                                             fontSize: screenSize.size.height / 10 * 0.25,
-                                                                            color: ThemeUtils.textColor(),
+                                                                            color: ThemeUtils().theme["text"]["default"],
                                                                           ),
                                                                           overflow: TextOverflow.ellipsis,
                                                                         ),
@@ -325,7 +325,7 @@ class _CloudPageState extends State<CloudPage> {
                                       children: <Widget>[
                                         Text(
                                           "Une erreur a eu lieu",
-                                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils.textColor()),
+                                          style: TextStyle(fontFamily: "Asap", color: ThemeUtils().theme["text"]["default"]),
                                         ),
                                         FlatButton(
                                           onPressed: () {
@@ -335,7 +335,7 @@ class _CloudPageState extends State<CloudPage> {
                                           child: Text("Recharger",
                                               style: TextStyle(
                                                 fontFamily: "Asap",
-                                                color: ThemeUtils.textColor(),
+                                                color: ThemeUtils().theme["text"]["default"],
                                               )),
                                           shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0), side: BorderSide(color: Theme.of(context).primaryColorDark)),
                                         ),
